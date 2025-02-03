@@ -116,5 +116,6 @@ public class Appinitt {
         resultCount = service.deleteStudentMulti(students);
         System.out.println(resultCount + "명의 학생 정보가 삭제되었습니다.");
         System.out.println("");
+
     }
 }
