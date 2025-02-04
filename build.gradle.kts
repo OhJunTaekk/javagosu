@@ -1,4 +1,5 @@
 plugins {
+    application
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
@@ -18,11 +19,26 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
+tasks.getByName("run", JavaExec::class)
+{
+    standardInput = System.`in`;
+}
+
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "wisoft.Appinitt"
+    }
 }
 
 tasks.shadowJar {
     archiveClassifier.set("all")
     mergeServiceFiles()
+}
+
+application {
+    mainClass = "wisoft.Appinitt"
 }
