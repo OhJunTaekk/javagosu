@@ -95,6 +95,7 @@ public class Appinitt {
 //                new Student("20111109", "김호성"),
 //                new Student("20111209", "김정준")
 //        };
+//            r
 //        resultCount = service.insertStudentMultiBatch(students);
 //        System.out.println(resultCount + "명의 학생이 등록되었습니다.");
 //        System.out.println("");
